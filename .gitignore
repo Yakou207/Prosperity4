@@ -1,0 +1,13 @@
+__pycache__/
+.venv/
+.venv-*/
+venv/
+.vscode/
+.DS_Store
+.claude/
+*.jpg
+*.png
+.coverage.*
+.github/
+.ipynb_checkpoints/
+*.ipynb

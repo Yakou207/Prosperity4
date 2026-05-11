@@ -1,0 +1,145 @@
+# Round 5 数据分析报告
+
+## 数据概览
+
+- **价格文件**: 3 个，总行数 1,500,000
+- **成交文件**: 3 个，总行数 35,385
+- **产品数量**: 50
+- **仓位限制**: 全部产品统一为 10
+- **关键判断**: 这是一个趋势市场 — 绝大多数产品呈现持续单向走势
+
+## 类别概览
+
+| 类别 | 产品数 | 平均价差(bps) | 建议策略 |
+|------|--------|---------------|----------|
+| CONSTRUCTION_PANELS | 5 | 9.66 | 趋势跟随 |
+| DOMESTIC_ROBOTS | 5 | 7.31 | 趋势跟随 |
+| GALAXY_SOUNDS_RECORDERS | 5 | 12.71 | 趋势跟随 |
+| INSTANT_TRANSLATORS | 5 | 8.86 | 趋势跟随 |
+| LIQUID_BREATH_OXYGEN_SHAKES | 5 | 12.75 | 趋势跟随 |
+| ORGANIC_MICROCHIPS | 5 | 8.93 | 趋势跟随 |
+| PROTEIN_SNACK_PACKS | 5 | 16.71 | 避免 (价差过大) |
+| PURIFICATION_PEBBLES | 5 | 12.85 | 趋势跟随 |
+| UV_VISORS | 5 | 12.77 | 趋势跟随 |
+| VERTICAL_SLEEPING_PODS | 5 | 8.76 | 趋势跟随 |
+
+## 产品趋势排序 (bps/tick)
+
+| 产品 | 均价 | 价差(bps) | 趋势(bps/tick) | 方向 | 1-lag AC |
+|------|------|-----------|----------------|------|----------|
+| PEBBLES_XS | 7404.64 | 13.16 | -0.095489 | SHORT | 动量 |
+| MICROCHIP_OVAL | 8179.60 | 9.11 | -0.094787 | SHORT | 动量 |
+| MICROCHIP_SQUARE | 13594.75 | 8.62 | 0.081110 | LONG | 动量 |
+| UV_VISOR_AMBER | 7911.70 | 13.04 | -0.062396 | SHORT | 动量 |
+| PEBBLES_XL | 13225.59 | 12.57 | 0.056665 | LONG | 动量 |
+| PANEL_1X4 | 9397.58 | 8.91 | -0.048455 | SHORT | 动量 |
+| ROBOT_IRONING | 8701.57 | 7.35 | -0.047681 | SHORT | 动量 |
+| SLEEP_POD_POLYESTER | 11840.56 | 8.70 | 0.046374 | LONG | 动量 |
+| ROBOT_MOPPING | 11100.21 | 7.18 | 0.043969 | LONG | 动量 |
+| SLEEP_POD_COTTON | 11527.61 | 8.72 | 0.042858 | LONG | 动量 |
+| PEBBLES_S | 8932.36 | 12.93 | -0.041658 | SHORT | 动量 |
+| SLEEP_POD_SUEDE | 11397.42 | 8.73 | 0.041505 | LONG | 动量 |
+| MICROCHIP_RECTANGLE | 8732.44 | 9.03 | -0.041320 | SHORT | 动量 |
+| GALAXY_SOUNDS_BLACK_HOLES | 11466.87 | 12.66 | 0.040596 | LONG | 动量 |
+| OXYGEN_SHAKE_GARLIC | 11925.64 | 12.62 | 0.037452 | LONG | 动量 |
+| PEBBLES_M | 10263.24 | 12.78 | 0.036965 | LONG | 动量 |
+| MICROCHIP_TRIANGLE | 9686.39 | 8.92 | -0.035625 | SHORT | 动量 |
+| OXYGEN_SHAKE_MORNING_BREATH | 10000.45 | 12.78 | -0.035401 | SHORT | 动量 |
+| ROBOT_VACUUMING | 9166.78 | 7.37 | -0.033314 | SHORT | 动量 |
+| ROBOT_LAUNDRY | 9822.76 | 7.29 | -0.030969 | SHORT | 动量 |
+| PANEL_2X4 | 11265.37 | 8.74 | 0.029446 | LONG | 动量 |
+| UV_VISOR_MAGENTA | 11111.79 | 12.68 | 0.027987 | LONG | 动量 |
+| GALAXY_SOUNDS_SOLAR_WINDS | 10437.54 | 12.74 | 0.027983 | LONG | 动量 |
+| PANEL_2X2 | 9576.60 | 8.89 | -0.024857 | SHORT | 动量 |
+| ROBOT_DISHES | 10018.31 | 7.34 | 0.024810 | LONG | 动量 |
+| TRANSLATOR_ASTRO_BLACK | 9385.22 | 8.91 | -0.022205 | SHORT | 动量 |
+| SLEEP_POD_NYLON | 9636.47 | 8.89 | 0.021496 | LONG | 动量 |
+| TRANSLATOR_VOID_BLUE | 10858.58 | 8.77 | 0.021392 | LONG | 动量 |
+| TRANSLATOR_GRAPHITE_MIST | 10084.64 | 8.84 | 0.020590 | LONG | 动量 |
+| UV_VISOR_RED | 11063.29 | 12.69 | 0.020050 | LONG | 动量 |
+| UV_VISOR_ORANGE | 10426.51 | 12.74 | 0.019948 | LONG | 动量 |
+| GALAXY_SOUNDS_PLANETARY_RINGS | 10766.67 | 12.72 | 0.018383 | LONG | 动量 |
+| OXYGEN_SHAKE_CHOCOLATE | 9556.88 | 12.75 | 0.017698 | LONG | 动量 |
+| PEBBLES_L | 10174.11 | 12.80 | 0.017346 | LONG | 动量 |
+| SNACKPACK_STRAWBERRY | 10706.61 | 16.65 | 0.014862 | LONG | 动量 |
+| OXYGEN_SHAKE_MINT | 9838.39 | 12.80 | -0.013564 | SHORT | 动量 |
+| TRANSLATOR_SPACE_GRAY | 9431.90 | 8.91 | -0.011298 | SHORT | 动量 |
+| GALAXY_SOUNDS_SOLAR_FLAMES | 11092.57 | 12.69 | -0.010647 | SHORT | 动量 |
+| SNACKPACK_PISTACHIO | 9495.84 | 16.77 | -0.009543 | NEUTRAL | 动量 |
+| SNACKPACK_CHOCOLATE | 9843.37 | 16.73 | -0.008842 | NEUTRAL | 动量 |
+| OXYGEN_SHAKE_EVENING_BREATH | 9271.90 | 12.79 | 0.007289 | NEUTRAL | 动量 |
+| MICROCHIP_CIRCLE | 9214.89 | 8.97 | 0.005769 | NEUTRAL | 动量 |
+| PANEL_1X2 | 8922.73 | 12.90 | 0.005747 | NEUTRAL | 动量 |
+| SLEEP_POD_LAMB_WOOL | 10701.44 | 8.78 | 0.005661 | NEUTRAL | 动量 |
+| GALAXY_SOUNDS_DARK_MATTER | 10226.66 | 12.76 | 0.005226 | NEUTRAL | 动量 |
+| SNACKPACK_VANILLA | 10097.30 | 16.71 | 0.005151 | NEUTRAL | 动量 |
+| TRANSLATOR_ECLIPSE_CHARCOAL | 9813.74 | 8.87 | -0.002463 | NEUTRAL | 动量 |
+| PANEL_4X4 | 9878.72 | 8.86 | 0.002432 | NEUTRAL | 动量 |
+| UV_VISOR_YELLOW | 10957.46 | 12.69 | -0.001278 | NEUTRAL | 动量 |
+| SNACKPACK_RASPBERRY | 10077.81 | 16.71 | 0.001135 | NEUTRAL | 动量 |
+
+## 成交数据摘要
+
+- **GALAXY_SOUNDS_BLACK_HOLES**: 733 笔, 均价 11485.24, 总成交量 1805
+- **GALAXY_SOUNDS_DARK_MATTER**: 733 笔, 均价 10237.68, 总成交量 1805
+- **GALAXY_SOUNDS_PLANETARY_RINGS**: 733 笔, 均价 10803.57, 总成交量 1805
+- **GALAXY_SOUNDS_SOLAR_FLAMES**: 733 笔, 均价 11077.38, 总成交量 1805
+- **GALAXY_SOUNDS_SOLAR_WINDS**: 733 笔, 均价 10460.95, 总成交量 1805
+- **MICROCHIP_CIRCLE**: 569 笔, 均价 9244.20, 总成交量 1119
+- **MICROCHIP_OVAL**: 569 笔, 均价 8066.15, 总成交量 1119
+- **MICROCHIP_RECTANGLE**: 569 笔, 均价 8681.22, 总成交量 1119
+- **MICROCHIP_SQUARE**: 569 笔, 均价 13713.23, 总成交量 1119
+- **MICROCHIP_TRIANGLE**: 569 笔, 均价 9646.55, 总成交量 1119
+- **OXYGEN_SHAKE_CHOCOLATE**: 733 笔, 均价 9547.54, 总成交量 1805
+- **OXYGEN_SHAKE_EVENING_BREATH**: 733 笔, 均价 9272.13, 总成交量 1805
+- **OXYGEN_SHAKE_GARLIC**: 733 笔, 均价 11938.29, 总成交量 1805
+- **OXYGEN_SHAKE_MINT**: 733 笔, 均价 9848.35, 总成交量 1805
+- **OXYGEN_SHAKE_MORNING_BREATH**: 733 笔, 均价 9970.13, 总成交量 1805
+- **PANEL_1X2**: 733 笔, 均价 8903.80, 总成交量 1805
+- **PANEL_1X4**: 733 笔, 均价 9386.51, 总成交量 1805
+- **PANEL_2X2**: 733 笔, 均价 9583.18, 总成交量 1805
+- **PANEL_2X4**: 733 笔, 均价 11253.72, 总成交量 1805
+- **PANEL_4X4**: 733 笔, 均价 9889.57, 总成交量 1805
+- **PEBBLES_L**: 644 笔, 均价 10186.38, 总成交量 2283
+- **PEBBLES_M**: 644 笔, 均价 10242.74, 总成交量 2283
+- **PEBBLES_S**: 644 笔, 均价 8951.55, 总成交量 2283
+- **PEBBLES_XL**: 644 笔, 均价 13204.24, 总成交量 2283
+- **PEBBLES_XS**: 644 笔, 均价 7415.06, 总成交量 2283
+- **ROBOT_DISHES**: 733 笔, 均价 10021.67, 总成交量 1805
+- **ROBOT_IRONING**: 733 笔, 均价 8674.08, 总成交量 1805
+- **ROBOT_LAUNDRY**: 733 笔, 均价 9800.85, 总成交量 1805
+- **ROBOT_MOPPING**: 733 笔, 均价 11134.16, 总成交量 1805
+- **ROBOT_VACUUMING**: 733 笔, 均价 9143.91, 总成交量 1805
+- **SLEEP_POD_COTTON**: 733 笔, 均价 11542.31, 总成交量 1805
+- **SLEEP_POD_LAMB_WOOL**: 733 笔, 均价 10712.56, 总成交量 1805
+- **SLEEP_POD_NYLON**: 733 笔, 均价 9636.88, 总成交量 1805
+- **SLEEP_POD_POLYESTER**: 733 笔, 均价 11870.79, 总成交量 1805
+- **SLEEP_POD_SUEDE**: 733 笔, 均价 11448.25, 总成交量 1805
+- **SNACKPACK_CHOCOLATE**: 733 笔, 均价 9844.04, 总成交量 1805
+- **SNACKPACK_PISTACHIO**: 733 笔, 均价 9484.06, 总成交量 1805
+- **SNACKPACK_RASPBERRY**: 733 笔, 均价 10087.03, 总成交量 1805
+- **SNACKPACK_STRAWBERRY**: 733 笔, 均价 10707.60, 总成交量 1805
+- **SNACKPACK_VANILLA**: 733 笔, 均价 10093.22, 总成交量 1805
+- **TRANSLATOR_ASTRO_BLACK**: 733 笔, 均价 9356.09, 总成交量 1805
+- **TRANSLATOR_ECLIPSE_CHARCOAL**: 733 笔, 均价 9807.08, 总成交量 1805
+- **TRANSLATOR_GRAPHITE_MIST**: 733 笔, 均价 10101.10, 总成交量 1805
+- **TRANSLATOR_SPACE_GRAY**: 733 笔, 均价 9447.77, 总成交量 1805
+- **TRANSLATOR_VOID_BLUE**: 733 笔, 均价 10863.87, 总成交量 1805
+- **UV_VISOR_AMBER**: 733 笔, 均价 7877.60, 总成交量 1805
+- **UV_VISOR_MAGENTA**: 733 笔, 均价 11129.11, 总成交量 1805
+- **UV_VISOR_ORANGE**: 733 笔, 均价 10425.15, 总成交量 1805
+- **UV_VISOR_RED**: 733 笔, 均价 11066.81, 总成交量 1805
+- **UV_VISOR_YELLOW**: 733 笔, 均价 10976.45, 总成交量 1805
+
+## 策略设计
+
+**纯趋势跟随 + EMA 动量过滤器**:
+1. 入场: EMA(4) 上穿/下穿 EMA(15) 确认趋势方向
+2. 所有 50 个产品根据历史趋势方向交易
+3. 无盘中退出 — 持仓至结束
+4. 最大仓位: 每个产品 10
+5. 执行: 匹配市场上最佳挂单
+
+**性能保护**: 达到 160K 利润后自动切换到保守模式，回撤超过35K时切换到防御模式。
+
+**不适用**: 均值回归（市场趋势一致）、配对交易（价差16.7bps破坏利润）、盘中退出（EMA交叉噪音带来的回撤）。
