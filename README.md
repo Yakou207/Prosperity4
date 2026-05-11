@@ -1,6 +1,5 @@
 # IMC Prosperity 4 — Yakou207
 
-**Overall Rank: #526**
 
 ## Overview
 
